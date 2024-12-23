@@ -1,0 +1,3 @@
+record per page = 10
+default sort result by created_at, which come from table users
+sorting using ascending order
