@@ -25,5 +25,5 @@
 
 ## 📝 Assumptions
 1. record per page = 10
-2. default sort result by created_at, which come from table users
-3. sorting using ascending order
+2. the result sorted based on field `created_at`, which come from table users
+3. sorting always use ascending order
