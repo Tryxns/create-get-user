@@ -5,13 +5,28 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Response;
 
 class UserController extends Controller
 {
     //
     function register_user(Request $request) {
-        $last_record = User::create($request->all());
+        $validator = Validator::make(request()->all(), [
+            'email' => 'string|required|email',
+            'password' => 'string|required|min:8',
+            'name' => 'string|required|min:3|max:50'
+        ]);
 
+        if($validator->fails())
+        {
+            return response()->json([
+                'errors' => $validator->errors(),
+                'status' => Response::HTTP_BAD_REQUEST,
+            ], Response::HTTP_BAD_REQUEST);
+        }
+
+        $last_record = User::create($request->all());
         return response()->json([
             'id'        => $last_record->id,
             'email'     => $last_record->email,
