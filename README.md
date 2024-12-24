@@ -3,8 +3,7 @@
 2. **MySQL**
 3. **Postman**
 
-## 🚀 Getting Started  
-
+## 🚀 Getting Started
 1. **Clone Repo**: 
     ```bash
     git clone git@github.com:Tryxns/create-get-user.git
@@ -23,3 +22,8 @@
    ```bash  
    php artisan serve
    ```
+
+## 📝 Assumptions
+1. record per page = 10
+2. default sort result by created_at, which come from table users
+3. sorting using ascending order
