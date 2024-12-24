@@ -50,8 +50,6 @@ class UserController extends Controller
         }
 
         $query_rs = $query_user->get();
-        // dd($query_rs);
-        // $query_user->ddRawSql();
         
         foreach ( $query_rs as $user) {
             $users[]=[
